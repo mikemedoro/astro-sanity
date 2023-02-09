@@ -1,0 +1,43 @@
+@layer base {
+  p {
+    @apply mb-4;
+  }
+  small {
+    @apply text-sm;
+  }
+  a {
+    @apply text-gray-600 no-underline transition-colors duration-200 hover:text-black;
+  }
+  a:not([class]) {
+    @apply underline text-gray-600 hover:text-black;
+    text-decoration-skip-ink: auto;
+  }
+  blockquote {
+    quotes: '“' '”' '‘' '’';
+  }
+}
+
+@layer components {
+  .type-h1 {
+    @apply mb-4 font-sans font-medium text-5xl;
+  }
+  .type-h2 {
+    @apply mb-4 font-sans font-medium text-4xl;
+  }
+  .type-h3 {
+    @apply mb-4 font-sans font-medium text-3xl;
+  }
+  .type-h4 {
+    @apply mb-4 font-sans font-medium text-2xl;
+  }
+  .type-h5 {
+    @apply mb-4 font-sans font-medium text-xl;
+  }
+  .type-h6 {
+    @apply mb-4 font-sans leading-tight;
+  }
+  .type-display {
+    @apply font-sans font-medium text-6xl;
+    @apply md:text-7xl;
+  }
+}

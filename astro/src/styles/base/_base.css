@@ -1,0 +1,8 @@
+@layer base {
+  html {
+  }
+
+  body {
+    @apply font-sans antialiased text-base leading-normal text-black bg-white;
+  }
+}

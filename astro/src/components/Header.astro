@@ -1,0 +1,16 @@
+---
+import settings from '@src/site-config.mjs';
+
+import MainNav from '@components/MainNav.astro';
+
+const title = settings.siteTitle;
+---
+
+<div class="site-header bg-white/90 shadow-sm">
+  <div class="container-fluid py-10">
+    <div class="flex flex-wrap justify-between">
+      <a href="/" class="mr-10 text-lg text-black">{title}</a>
+      <MainNav />
+    </div>
+  </div>
+</div>

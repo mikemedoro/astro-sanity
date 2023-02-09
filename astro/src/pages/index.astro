@@ -1,0 +1,42 @@
+---
+import Layout from '@layouts/Base.astro';
+import PageHeader from '@components/PageHeader.astro';
+import Card from '@components/Card.astro';
+
+import { getRecentPosts } from '@src/lib/api';
+
+const meta = {
+  title: '',
+  description: 'This is the home page',
+};
+
+const posts = await getRecentPosts();
+---
+
+<Layout meta={meta}>
+  <PageHeader headline="Welcome" />
+
+  <div class="section spacer">
+    <div class="container">
+      {
+        posts.length > 0 && (
+          <div>
+            <h2 class="type-h2 mb-10">Recent Posts</h2>
+
+            <div class="grid grid-cols-12 gap-y-5 md:gap-10">
+              {posts.map((post) => (
+                <div class="col-span-12 md:col-span-4">
+                  <Card
+                    href={`/posts/${post.slug.current}`}
+                    title={post.title}
+                    body={post.excerpt}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        )
+      }
+    </div>
+  </div>
+</Layout>

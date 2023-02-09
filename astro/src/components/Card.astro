@@ -1,0 +1,15 @@
+---
+const { href, title, body } = Astro.props;
+---
+
+<div class="card flex flex-col bg-gray-100 h-full rounded-md shadow-md">
+  <a href={href} rel="prefetch" class="h-full block px-5 py-7 text-current">
+    <h3 class="type-h4">
+      {title}
+    </h3>
+
+    <p>
+      {body}
+    </p>
+  </a>
+</div>

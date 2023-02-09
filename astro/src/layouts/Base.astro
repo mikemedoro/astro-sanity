@@ -1,0 +1,28 @@
+---
+import BaseHead from '@components/BaseHead.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+
+const { meta } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead {...meta} />
+  </head>
+
+  <body class="site-body">
+    <a href="#main" class="sr-only">Skip to content</a>
+
+    <div id="site" class="site">
+      <Header />
+
+      <main id="main" class="page-content">
+        <slot>Sorry, no content</slot>
+      </main>
+
+      <Footer />
+    </div>
+  </body>
+</html>
